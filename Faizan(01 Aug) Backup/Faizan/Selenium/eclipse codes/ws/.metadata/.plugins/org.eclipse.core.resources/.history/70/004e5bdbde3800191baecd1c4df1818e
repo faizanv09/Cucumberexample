@@ -1,0 +1,67 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Program {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+        System.setProperty("webdriver.chrome.driver","C:\\Faizan\\Selenium\\chrome driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rportalbuild.hiperos.com/");
+		driver.findElement(By.id("txtUsername")).sendKeys("faizan_rpdh@mobiusservices.com");
+		driver.findElement(By.xpath("//*[@id='Password']")).sendKeys("coupa11");
+		driver.findElement(By.id("btnLogin")).click();
+		driver.findElement(By.xpath("//*[@id='header-nav-ContxtCompliance']")).click();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//input[@title='Add New Program']")).click();
+		Thread.sleep(2000);
+		Select sp = new Select(driver.findElement(By.id("ctl00_cntBody_CreateNewProgramWindow_C_ProgramTypeDDL")));
+		sp.selectByIndex(2);
+		driver.findElement(By.xpath("//*[text()='Create']")).click();
+		
+		driver.findElement(By.xpath("//input[@name='ctl00$cntBody$ckEnableLaunchRequest']")).click();
+		driver.findElement(By.xpath("//input[@id='ctl00_cntBody_rbParty1Only']")).click();
+		driver.findElement(By.xpath("//span[@class='next']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//option[text()='Amendment']")).click();
+		driver.findElement(By.xpath("//input[@id='btnSelect']")).click();
+		driver.findElement(By.xpath("//span[@class='next']")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//button[@id='ibtnAddKPI']")).click();
+		driver.findElement(By.xpath("//textarea[@id='txtKPIName|0']")).sendKeys("test");
+		Select period = new Select(driver.findElement(By.xpath("//select[@id='ddlPeriod|0']")));
+		period.selectByIndex(2);
+		Select scoretype = new Select(driver.findElement(By.xpath("//select[@id='ddlPeriod|0']")));
+		scoretype.selectByIndex(1);
+		Thread.sleep(2000);
+		/*driver.findElement(By.xpath("//input[@id='btnForm|0']")).click();
+		Thread.sleep(8000);
+		//Program component
+		driver.findElement(By.xpath("//div [@id ='upAddFields'] //a[contains(text(),'Add More Fields')]")).click();
+		driver.findElement(By.cssSelector("#lkbOpenSearchPanel")).click();
+		driver.findElement(By.id("btnSearch")).click();
+		
+		Thread.sleep(4000);
+		
+		driver.findElement(By.xpath("//input[@id='gvAvail_ctl562_chkSelect']")).click();
+		Thread.sleep(6000);
+		driver.findElement(By.xpath("//button[@id='btnAdd']")).click();
+		driver.findElement(By.id("btnSave2")).click();
+		
+		driver.switchTo().alert().accept();
+		Thread.sleep(2000);*/
+		
+		for(int i=0;i<4;i++){
+			
+		driver.findElement(By.xpath("//span[@class='next']")).click();
+		Thread.sleep(3000);
+		}
+		
+		
+		
+	}
+
+}

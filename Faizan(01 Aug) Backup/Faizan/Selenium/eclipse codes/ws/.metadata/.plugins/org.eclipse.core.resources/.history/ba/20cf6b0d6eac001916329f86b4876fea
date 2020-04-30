@@ -1,0 +1,81 @@
+package Mojo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+
+public class Login {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Faizan\\Selenium\\Driver\\74\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://13.235.159.244/lease");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		
+		driver.findElement(By.name("login")).sendKeys("LeaseTeamLeaderA");
+		driver.findElement(By.name("password")).sendKeys("mobius123");
+		driver.findElement(By.name("commit")).click();
+		
+		
+		Actions Maproj = new Actions(driver);
+		Maproj.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Input Initiate')]")).click();
+		
+		
+		Select cl = new Select(driver.findElement(By.xpath("//select[@id='clients']")));
+		cl.selectByValue("1");
+		
+		Select pr = new Select(driver.findElement(By.xpath("//select[@id='ProjectId']")));
+		pr.selectByValue("3369");
+		
+		
+		WebElement uploadElement = driver.findElement(By.id("file"));
+
+        //driver.findElement(By.id("file")).click();
+       
+        uploadElement.sendKeys("C:\\Faizan\\Projects\\Mojo\\Upload\\Sprint_5_First_Cycle.xls");
+
+     
+        Select status = new Select(driver.findElement(By.xpath("//select[@id='module']")));
+		status.selectByValue("1");
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+		
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Automation001");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

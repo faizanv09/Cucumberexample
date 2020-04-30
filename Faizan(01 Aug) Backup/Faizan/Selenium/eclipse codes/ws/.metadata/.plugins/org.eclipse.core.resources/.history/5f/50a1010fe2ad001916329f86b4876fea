@@ -1,0 +1,72 @@
+package Mojo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+
+public class prodDashboard {
+	
+	@Test
+
+	public void prod(WebDriver driver,By by){
+	
+	Actions Prod = new Actions(driver);
+	Prod.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();
+	
+	driver.findElement(By.xpath("//a[contains(text(),'Production Dashboard')]")).click();
+	
+	driver.findElement(By.xpath("//button[@id='check_submit']")).click();
+	
+	
+	//Searching the lease ID 
+	
+			
+	/*Select cltid = new Select(driver.findElement(By.id("ClientId")));
+	cltid.selectByValue("1");*/
+	
+	Select projid = new Select(driver.findElement(By.xpath("//select[@name='ProjectId']")));
+	projid.selectByValue("3369");
+	
+	driver.findElement(By.xpath("//input[@placeholder='Lease ID']")).sendKeys("Automation001");
+	
+	driver.findElement(By.xpath("//button[contains(text(),'VIEW')]")).click();
+	
+	//driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Automation001");
+	
+	
+	WebElement autotext = driver.findElement(By.xpath("//td[contains(text(),'Automation001')]"));
+	autotext.getText();
+	// System.out.println(autotext.getText());
+	
+		
+	String Actualdata= "Automation001";
+	
+	Assert.assertEquals(autotext.getText(), Actualdata);
+	
+	System.out.println(autotext.getText());
+	
+	//Actions logout = new Actions(driver);
+	
+	//logout.moveToElement(driver.findElement(By.xpath("//img[contains(@src,'oneblack')]")));
+	
+	
+	driver.findElement(By.xpath("//input[@id='priority116963']")).click();
+	
+	driver.findElement(By.id("prioritize")).click();
+	
+	
+	
+	driver.findElement(By.xpath("//img[contains(@src,'oneblack')]")).click();
+	
+	driver.findElement(By.xpath("//a[contains(text(),'Logout')]")).click();
+		
+	
+	
+	}
+	
+}

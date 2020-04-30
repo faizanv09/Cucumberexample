@@ -1,0 +1,21 @@
+package Mojo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class leaseLogin {
+	
+	public void lease(WebDriver driver,By by){
+
+	driver.findElement(By.name("login")).sendKeys("LeaseDQCUserA");
+	driver.findElement(By.name("password")).sendKeys("mobius123");
+	driver.findElement(By.name("commit")).click();
+	
+	 if(!driver.findElements(By.xpath("//b[contains(text(),'Are You Sure? Your previous session is still active')]")).isEmpty())
+	 {
+		 driver.findElement(By.xpath("//input[@id='activeYes']")).click();
+		 
+	    }
+	 
+	}
+}

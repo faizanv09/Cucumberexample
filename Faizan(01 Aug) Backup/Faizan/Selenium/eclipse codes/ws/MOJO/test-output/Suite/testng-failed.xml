@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="Mojo.Login"/>
+      <class name="Mojo.queryCheck"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="Mojo.queryCheck">
+        <methods>
+          <include name="queryck"/>
+        </methods>
+      </class> <!-- Mojo.queryCheck -->
+      <class name="Mojo.Login">
+        <methods>
+          <include name="prod"/>
+          <include name="ManageProj"/>
+        </methods>
+      </class> <!-- Mojo.Login -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

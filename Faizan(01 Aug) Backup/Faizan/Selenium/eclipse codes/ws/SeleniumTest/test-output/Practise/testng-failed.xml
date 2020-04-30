@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Practise]">
+  <test name="Test">
+    <classes>
+      <class name="TestNGprac.Newclass"/>
+      <class name="TestNGprac.Class4"/>
+      <class name="TestNGprac.Generic"/>
+      <class name="TestNGprac.Mainclass"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="TestNGprac.Generic">
+        <methods>
+          <include name="CreateSupplier"/>
+        </methods>
+      </class> <!-- TestNGprac.Generic -->
+      <class name="TestNGprac.Mainclass">
+        <methods>
+          <include name="Centraized"/>
+          <include name="CreateSupplier"/>
+        </methods>
+      </class> <!-- TestNGprac.Mainclass -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Practise] -->

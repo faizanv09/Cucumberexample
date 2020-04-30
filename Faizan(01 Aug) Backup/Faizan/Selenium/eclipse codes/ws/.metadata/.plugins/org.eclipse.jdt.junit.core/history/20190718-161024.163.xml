@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="automation" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="cucumberOptions.TestRunner" time="0.765">
+    <testsuite name="Feature: Application Login" time="0.765">
+      <testsuite name="Scenario: Default home page" time="0.765">
+        <testcase name="Given An external and internal user needs to be added to a 3pm tenant" classname="Scenario: Default home page" time="0.686"/>
+        <testcase name="When A valid first name, last name, email and any required fields are entered into the add user page and save is clicked" classname="Scenario: Default home page" time="0.001"/>
+        <testcase name="Then the new users are created, external users display under the supplier, can be viewed in the users grid, and appears with the same information when the edit user page is opened" classname="Scenario: Default home page" time="0.078"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

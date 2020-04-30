@@ -1,0 +1,36 @@
+package Mojo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+public class prodDashboard {
+	
+	public void prod(WebDriver driver,By by){
+	
+	Actions Prod = new Actions(driver);
+	Prod.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();
+	
+	driver.findElement(By.xpath("//a[contains(text(),'Production Dashboard')]")).click();
+	
+	driver.findElement(By.xpath("//button[@id='check_submit']")).click();
+	
+	
+	//Searching the lease ID 
+	
+			
+	Select cltid = new Select(driver.findElement(By.id("ClientId")));
+	cltid.selectByValue("1");
+	
+	Select projid = new Select(driver.findElement(By.id("ProjectId")));
+	projid.selectByValue("3369");
+	
+	driver.findElement(By.xpath("//input[@placeholder='Lease ID']")).sendKeys("Automation001");
+	
+	driver.findElement(By.xpath("//button[@id='check_submit']")).click();
+	
+	driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Automation001");
+	}
+	
+}

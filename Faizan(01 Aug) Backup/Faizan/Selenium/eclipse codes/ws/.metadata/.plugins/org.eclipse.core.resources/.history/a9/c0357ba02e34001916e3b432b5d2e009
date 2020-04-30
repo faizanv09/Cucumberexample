@@ -1,0 +1,62 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class EePractise {
+
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+		//System.setProperty("webdriver.gecko.driver","C:\\Faizan\\Selenium\\Gecko\\geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Faizan\\Selenium\\chrome driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		/*driver.get("http://52.18.92.26:83/");
+		driver.findElement(By.id("loginemail")).sendKeys("admin@mobiusservices.com");
+		driver.findElement(By.name("loginpassword")).sendKeys("Mobius@123");
+		driver.findElement(By.xpath("//*[@id='loginButton']")).click();
+		driver.findElement(By.cssSelector("tr.even:nth-child(2) > td:nth-child(1) > a:nth-child(1)")).click();
+		driver.findElement(By.cssSelector("#menu1")).click();*/
+		
+		driver.get("https://rportalbuild.hiperos.com/");
+		driver.findElement(By.id("txtUsername")).sendKeys("faizan_rpdh@mobiusservices.com");
+		driver.findElement(By.xpath("//*[@id='Password']")).sendKeys("coupa11");
+		driver.findElement(By.id("btnLogin")).click();
+		
+		//driver.findElement(By.xpath("//*[@id='header-nav-ContxtSupplier']")).click();
+		driver.findElement(By.xpath("//a[@id='header-nav-ContxtHome']")).click();
+		
+		//driver.findElement(By.cssSelector("a[href*='StandardObjects/AddNew?type=3'")).click();
+		//driver.findElement(By.xpath("//a[contains(@href,'StandardObjects/AddNew?type=3')")).click();
+		//driver.findElement(By.xpath("//span[contains(text(),'Add New')]")).click();
+		//driver.findElement(By.xpath("//b[contains(text(),'Engagement')]")).click();
+		//driver.findElement(By.xpath("//div[@class='span8']//a[@class='btn btn-primary pull-right']")).click();
+		//driver.findElement(By.xpath("//a[contains(@style,'margin-left: 5px')]")).click();
+		
+		driver.findElement(By.xpath("//*[@id='actionShowMeAll']/div")).click();
+		
+				
+				
+			
+					
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		
+		
+		
+		
+
+	}
+
+}

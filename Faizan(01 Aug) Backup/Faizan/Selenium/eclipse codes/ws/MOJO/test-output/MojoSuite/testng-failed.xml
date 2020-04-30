@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [MojoSuite]">
+  <test name="Login">
+    <classes>
+      <class name="Mojo.Login"/>
+      <class name="Mojo.prodDashboard"/>
+      <class name="Mojo.leaseLogin"/>
+    </classes>
+  </test> <!-- Login -->
+  <test name="Login(failed)">
+    <classes>
+      <class name="Mojo.prodDashboard">
+        <methods>
+          <include name="prod"/>
+        </methods>
+      </class> <!-- Mojo.prodDashboard -->
+      <class name="Mojo.leaseLogin">
+        <methods>
+          <include name="lease"/>
+        </methods>
+      </class> <!-- Mojo.leaseLogin -->
+      <class name="Mojo.Login">
+        <methods>
+          <include name="prod"/>
+          <include name="ManageProj"/>
+        </methods>
+      </class> <!-- Mojo.Login -->
+    </classes>
+  </test> <!-- Login(failed) -->
+</suite> <!-- Failed suite [MojoSuite] -->

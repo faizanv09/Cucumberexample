@@ -1,0 +1,30 @@
+package Mojo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class queryCheck {
+	
+	public void queryck(WebDriver driver, By by) {
+		
+		driver.findElement(By.name("login")).sendKeys("LeaseTeamLeaderA");
+		driver.findElement(By.name("password")).sendKeys("mobius123");
+		driver.findElement(By.name("commit")).click();
+		
+		if (!driver
+				.findElements(By.xpath("//b[contains(text(),'Are You Sure? Your previous session is still active')]"))
+				.isEmpty()) {
+			driver.findElement(By.xpath("//input[@id='activeYes']")).click();
+			
+			
+			Actions Maproj = new Actions(driver);
+			Maproj.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();	
+		
+		
+		
+		
+	}
+	}
+
+

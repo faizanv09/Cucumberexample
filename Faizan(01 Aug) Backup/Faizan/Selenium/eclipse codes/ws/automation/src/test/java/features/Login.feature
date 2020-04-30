@@ -1,0 +1,9 @@
+Feature: Application Login
+
+Scenario: Default home page
+
+Given An external and internal user needs to be added to a 3pm tenant
+
+When A valid first name, last name, email and any required fields are entered into the add user page and save is clicked
+
+Then the new users are created, external users display under the supplier, can be viewed in the users grid, and appears with the same information when the edit user page is opened

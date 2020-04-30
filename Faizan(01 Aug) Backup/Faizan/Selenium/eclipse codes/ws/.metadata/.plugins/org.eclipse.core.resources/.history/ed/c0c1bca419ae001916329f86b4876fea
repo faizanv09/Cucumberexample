@@ -1,0 +1,37 @@
+package Mojo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class leaseLogin {
+
+	@Test
+	public void lease(WebDriver driver, By by) {
+
+		driver.findElement(By.name("login")).sendKeys("LeaseDQCUserA");
+		driver.findElement(By.name("password")).sendKeys("mobius123");
+		driver.findElement(By.name("commit")).click();
+
+		if (!driver
+				.findElements(By.xpath("//b[contains(text(),'Are You Sure? Your previous session is still active')]"))
+				.isEmpty()) {
+			driver.findElement(By.xpath("//input[@id='activeYes']")).click();
+
+		}
+
+		driver.findElement(By.xpath("//a[@class='btn btn-primary']")).click();
+		driver.findElement(By.id("1325")).click();
+
+		Select ml = new Select(driver.findElement(By.xpath("//select[@id='ProductionFields_4670_123_1']")));
+		ml.selectByValue("Yes");
+
+		driver.findElement(By.xpath("//button[contains(text(),'Query')]")).click();
+
+		driver.findElement(By.xpath("//textarea[contains(@id,'qry')]")).sendKeys("test");
+
+		driver.findElement(By.xpath("//div[@class='modal-footer']//button[@id='Query']")).click();
+
+	}
+}

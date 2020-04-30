@@ -1,0 +1,123 @@
+package Mojo;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+
+
+
+
+public class Login extends prodDashboard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Faizan\\Selenium\\Driver\\74\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("http://13.235.159.244/lease");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		
+		driver.findElement(By.name("login")).sendKeys("LeaseTeamLeaderA");
+		driver.findElement(By.name("password")).sendKeys("mobius123");
+		driver.findElement(By.name("commit")).click();
+		
+		 if(!driver.findElements(By.xpath("//b[contains(text(),'Are You Sure? Your previous session is still acti')]")).isEmpty())
+		 {
+			 driver.findElement(By.xpath("//input[@id='activeYes']")).click();
+			 
+		    }
+		
+		
+		Actions Maproj = new Actions(driver);
+		Maproj.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Input Initiate')]")).click();
+		
+		
+		Select cl = new Select(driver.findElement(By.xpath("//select[@id='clients']")));
+		cl.selectByValue("1");
+		
+		Select pr = new Select(driver.findElement(By.xpath("//select[@id='ProjectId']")));
+		pr.selectByValue("3369");
+		
+		
+		WebElement uploadElement = driver.findElement(By.id("file"));
+
+        //driver.findElement(By.id("file")).click();
+       
+        uploadElement.sendKeys("C:\\Faizan\\Projects\\Mojo\\Upload\\Sprint_5_First_Cycle.xls");
+
+     
+        Select status = new Select(driver.findElement(By.id("StatusId")));
+		status.selectByValue("1");
+		
+		driver.findElement(By.xpath("//*[@value='Submit']")).click();
+		
+		WebElement text = driver.findElement(By.xpath("//div[@class='success_msg alert']"));
+		text.getText();
+		System.out.println(text.getText());
+		
+		
+		prodDashboard md = new prodDashboard();
+		md.prod(driver, By.xpath("//a[contains(text(),'Manage Project')]"));
+		
+		
+		
+		/*Actions Prod = new Actions(driver);
+		Prod.moveToElement(driver.findElement(By.xpath("//a[contains(text(),'Manage Project')]"))).perform();
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Production Dashboard')]")).click();
+		
+		driver.findElement(By.xpath("//button[@id='check_submit']")).click();
+		
+		
+		//Searching the lease ID 
+		
+				
+		Select cltid = new Select(driver.findElement(By.id("ClientId")));
+		cltid.selectByValue("1");
+		
+		Select prid = new Select(driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/div[1]/div[1]/div[1]/div[1]/select[1]")));
+		prid.selectByValue("3369");
+		
+		driver.findElement(By.xpath("//input[@placeholder='Lease ID']")).sendKeys("Automation001");
+		
+		driver.findElement(By.xpath("//button[@id='check_submit']")).click();
+		
+		driver.findElement(By.xpath("//input[@type='search']")).sendKeys("Automation001");*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
