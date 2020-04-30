@@ -1,0 +1,265 @@
+Feature: validate iowa end-to-end automation functionality
+
+  @Login
+  Scenario: Validate user successfull login                           # IowaProject.feature:4
+    Given Enter the Url to navigate webpage                           # A_LoginModule.enter_the_Url_to_navigate_webpage()
+    When User enter the email "Ide@mobiusservices.com"                # A_LoginModule.user_enter_the_email(String)
+    And User enter the "Angular@123"                                  # A_LoginModule.user_enter_the(String)
+    And user enter the valid captcha                                  # A_LoginModule.user_enter_the_valid_captcha()
+    And User click the Login button                                   # A_LoginModule.user_click_the_Login_button()
+    Then validate user enter into the Home page of Iowa"<validation>" # A_LoginModule.validate_user_enter_into_the_Home_page_of_Iowa(String)
+
+  @RuleByDataElement_RM
+  Scenario: Validate RulesByDataElement module                # IowaProject.feature:67
+    Given user is on home page                                # E_RuleByDataElement_RM.user_is_on_home_page()
+    When user click on master data                            # E_RuleByDataElement_RM.user_click_on_master_data()
+    And user click on rule under master data                  # E_RuleByDataElement_RM.user_click_on_rule_under_master_data()
+    And user click on Rules By Data Element under Master data # E_RuleByDataElement_RM.user_click_on_Rules_By_Data_Element_under_Master_data()
+    Then user click on select report drop down                # E_RuleByDataElement_RM.user_click_on_select_report_drop_down()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:108
+    When user choose position file from select report drop down
+    And user click on + button to create data element for position file
+    And user entering "<Data Element Title>" in text field
+    And user entering "<Warnig Threshold>" value in text field
+    And user select "<Data Type>" from drop down
+    And user entering "<Maximum Length>" of Data element we given
+    And user entering "<Data Element Description>"
+    Then user click on Add button in popup data elemnt creation popup window
+
+    Examples: 
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:119
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "Commcollege1" in text field                                            # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "2" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Number assigned to a Community College"                                # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:120
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "SSN1" in text field                                                    # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "9" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Employee's SSN"                                                        # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:121
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "PositionCode1" in text field                                           # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "3" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Position Code"                                                         # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:122
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "EmployType1" in text field                                             # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "1" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Type of Employment"                                                    # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:123
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "PositionTotEarn1" in text field                                        # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "6" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Total Earnings"                                                        # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:124
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "BaseSalary1" in text field                                             # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "6" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Base Salary"                                                           # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:125
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "DaysInContract1" in text field                                         # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "3" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_ele
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:120
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+      org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=81.0.4044.113)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+      System info: host: 'DESKTOP-ROO5GIO', ip: '192.168.43.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+      Session ID: 3d9153871f4b16a4f485cc4e9f48d8fa
+      *** Element info: {Using=xpath, value=//option[contains(text(),'Position')]}
+      	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+      	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+      	at com.sun.proxy.$Proxy34.click(Unknown Source)
+      	at com.iowa.baseclass.BaseClassIowa.clickOnElement(BaseClassIowa.java:68)
+      	at com.iowa.stepdefinition.EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down(EE_PositionDataElementCreation_RM.java:28)
+      	at ✽.When user choose position file from select report drop down(IowaProject.feature:109)
+
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "SSN1" in text field                                                    # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "9" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Employee's SSN"                                                        # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:121
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+      org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=81.0.4044.113)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+      System info: host: 'DESKTOP-ROO5GIO', ip: '192.168.43.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+      Session ID: 3d9153871f4b16a4f485cc4e9f48d8fa
+      *** Element info: {Using=xpath, value=//option[contains(text(),'Position')]}
+      	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+      	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+      	at com.sun.proxy.$Proxy34.click(Unknown Source)
+      	at com.iowa.baseclass.BaseClassIowa.clickOnElement(BaseClassIowa.java:68)
+      	at com.iowa.stepdefinition.EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down(EE_PositionDataElementCreation_RM.java:28)
+      	at ✽.When user choose position file from select report drop down(IowaProject.feature:109)
+
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "PositionCode1" in text field                                           # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "3" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Position Code"                                                         # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:122
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+      org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=81.0.4044.113)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+      System info: host: 'DESKTOP-ROO5GIO', ip: '192.168.43.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+      Session ID: 3d9153871f4b16a4f485cc4e9f48d8fa
+      *** Element info: {Using=xpath, value=//option[contains(text(),'Position')]}
+      	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+      	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+      	at com.sun.proxy.$Proxy34.click(Unknown Source)
+      	at com.iowa.baseclass.BaseClassIowa.clickOnElement(BaseClassIowa.java:68)
+      	at com.iowa.stepdefinition.EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down(EE_PositionDataElementCreation_RM.java:28)
+      	at ✽.When user choose position file from select report drop down(IowaProject.feature:109)
+
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "EmployType1" in text field                                             # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "1" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Type of Employment"                                                    # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()
+
+  @RuleByDataElement2_RM
+  Scenario Outline: validate Rules By DataElement module- Position File Data Element Creation # IowaProject.feature:123
+    When user choose position file from select report drop down                               # EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down()
+      org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+      from unknown error: web view not found
+        (Session info: chrome=81.0.4044.113)
+      Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+      System info: host: 'DESKTOP-ROO5GIO', ip: '192.168.43.61', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\Dell\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:55699}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+      Session ID: 3d9153871f4b16a4f485cc4e9f48d8fa
+      *** Element info: {Using=xpath, value=//option[contains(text(),'Position')]}
+      	at sun.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+      	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+      	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+      	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+      	at com.sun.proxy.$Proxy34.click(Unknown Source)
+      	at com.iowa.baseclass.BaseClassIowa.clickOnElement(BaseClassIowa.java:68)
+      	at com.iowa.stepdefinition.EE_PositionDataElementCreation_RM.user_choose_position_file_from_select_report_drop_down(EE_PositionDataElementCreation_RM.java:28)
+      	at ✽.When user choose position file from select report drop down(IowaProject.feature:109)
+
+    And user click on + button to create data element for position file                       # EE_PositionDataElementCreation_RM.user_click_on_button_to_create_data_element_for_position_file()
+    And user entering "PositionTotEarn1" in text field                                        # EE_PositionDataElementCreation_RM.user_entering_in_text_field(String)
+    And user entering "0" value in text field                                                 # EE_PositionDataElementCreation_RM.user_entering_value_in_text_field(String)
+    And user select "Numeric" from drop down                                                  # EE_PositionDataElementCreation_RM.user_select_from_drop_down(String)
+    And user entering "6" of Data element we given                                            # EE_PositionDataElementCreation_RM.user_entering_of_Data_element_we_given(String)
+    And user entering "Total Earnings"                                                        # EE_PositionDataElementCreation_RM.user_entering(String)
+    Then user click on Add button in popup data elemnt creation popup window                  # EE_PositionDataElementCreation_RM.user_click_on_Add_button_in_popup_data_elemnt_creation_popup_window()

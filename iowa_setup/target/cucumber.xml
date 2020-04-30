@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="9" time="188.46922">
+<testcase classname="validate iowa end-to-end automation functionality" name="Validate user successfull login" time="55.976809">
+<system-out><![CDATA[Given Enter the Url to navigate webpage.....................................passed
+When User enter the email "Ide@mobiusservices.com"..........................passed
+And User enter the "Angular@123"............................................passed
+And user enter the valid captcha............................................passed
+And User click the Login button.............................................passed
+Then validate user enter into the Home page of Iowa"<validation>"...........passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="Validate RulesByDataElement module" time="56.245633">
+<system-out><![CDATA[Given user is on home page..................................................passed
+When user click on master data..............................................passed
+And user click on rule under master data....................................passed
+And user click on Rules By Data Element under Master data...................passed
+Then user click on select report drop down..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation" time="11.785722">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "Commcollege1" in text field..............................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "2" of Data element we given..............................passed
+And user entering "Number assigned to a Community College"..................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 2" time="10.784927">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "SSN1" in text field......................................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "9" of Data element we given..............................passed
+And user entering "Employee's SSN"..........................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 3" time="10.595127">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "PositionCode1" in text field.............................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "3" of Data element we given..............................passed
+And user entering "Position Code"...........................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 4" time="10.7498">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "EmployType1" in text field...............................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "1" of Data element we given..............................passed
+And user entering "Type of Employment"......................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 5" time="10.891965">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "PositionTotEarn1" in text field..........................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "6" of Data element we given..............................passed
+And user entering "Total Earnings"..........................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 6" time="10.728744">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "BaseSalary1" in text field...............................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "6" of Data element we given..............................passed
+And user entering "Base Salary".............................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+<testcase classname="validate iowa end-to-end automation functionality" name="validate Rules By DataElement module- Position File Data Element Creation 7" time="10.710493">
+<system-out><![CDATA[When user choose position file from select report drop down.................passed
+And user click on + button to create data element for position file.........passed
+And user entering "DaysInContract1" in text field...........................passed
+And user entering "0" value in text field...................................passed
+And user select "Numeric" from drop down....................................passed
+And user entering "3" of Data element we given..............................passed
+And user entering "Days in Contract"........................................passed
+Then user click on Add button in popup data elemnt creation popup window....passed
+]]></system-out>
+</testcase>
+</testsuite>
